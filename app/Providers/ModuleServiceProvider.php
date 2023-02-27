@@ -25,7 +25,7 @@ class ModuleServiceProvider extends ServiceProvider
                 $this->loadMigrationsFrom(base_path('app/Modules/'.$module.'/database/migrations'));
             }
             if(is_dir(base_path('app/Modules/'.$module.'/Lang'))) {
-                $this->loadTranslationsFrom(base_path('app/Modules/'.$module.'/Lang'), lcfirst($module));
+                $this->loadTranslationsFrom(base_path('app/Modules/'.$module.'/Lang'), $module);
             }
             if(is_dir(base_path('app/Modules/'.$module.'/Config'))) {
                 $this->mergeConfigFrom( base_path('app/Modules/'.$module.'/Config/'.lcfirst($module).'.php') , lcfirst($module));

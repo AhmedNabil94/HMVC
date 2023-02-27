@@ -12,7 +12,6 @@ class UserController extends Controller
 
     public function index()
     {
-        dd(config('user.pagination'));
         $users = $this->user->getAll();
     }
 
